@@ -26,8 +26,8 @@ asked chatgpt to help me with the right clamp sizes */
   --radius-large: 1rem;
 
   /* fonts */
-  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  --font-title: Georgia, "Times New Roman", Times, serif;
+  --font-body: "Calibri", "Trebuchet MS", sans-serif;
+  --font-title: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
 }
 
 /* base */
@@ -137,6 +137,7 @@ main {
 
     & .img_text {
       display: grid;
+      /* stacking them on movile */
       grid-template-columns: 1fr;
       gap: 0.9rem;
       padding: var(--space-m);
@@ -179,7 +180,7 @@ a:focus-visible {
   outline-offset: 0.12rem;
 }
 
-/* media queries (mobile-first) */
+/* media queries */
 @media (min-width: 48rem) {
   nav #menu {
     grid-auto-flow: column;

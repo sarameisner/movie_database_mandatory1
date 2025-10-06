@@ -28,7 +28,7 @@ async function getMovies(type = "now_playing") {
     // build the complete API URL based on selected type
     const url = `${API}${endpoints[type]}?language=en-US&page=1`;
 
-    // send the request with headers (authorization token required)
+    // send the request with headers
     const res = await fetch(url, {
       headers: {
         accept: "application/json",
@@ -36,7 +36,7 @@ async function getMovies(type = "now_playing") {
       },
     });
 
-    // handle HTTP errors (e.g., 401, 404)
+    // handle HTTP errors
     if (!res.ok) throw new Error(`HTTP error: ${res.status}`);
 
     // parse JSON response
