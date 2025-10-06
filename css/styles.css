@@ -1,6 +1,9 @@
-/* styling 🌷 */
+/* styling <3 
+
+asked chatgpt to help me with the right clamp sizes */
+
 :root {
-  /*  colors */
+  /* colors */
   --color-background: #f6f3f2;
   --color-text: #1a1a1a;
   --color-text-muted: #6b6b6b;
@@ -13,7 +16,7 @@
   --color-surface: #ffffff;
   --color-border: #c9b6b6;
 
-  /*  spacing & shape */
+  /* spacing og shapee */
   --space-xs: 0.5rem;
   --space-s: 0.75rem;
   --space-m: 1rem;
@@ -27,7 +30,7 @@
   --font-title: Georgia, "Times New Roman", Times, serif;
 }
 
-/* ---------- base styles ---------- */
+/* base */
 * {
   box-sizing: border-box;
 }
@@ -50,6 +53,7 @@ h2 {
   margin: 0;
 }
 
+/* header */
 header {
   background: linear-gradient(180deg, var(--color-header-top), var(--color-header-bottom));
   color: #fff;
@@ -64,6 +68,7 @@ header {
   }
 }
 
+/* nav */
 nav {
   background: var(--color-nav-background);
   border-bottom: 0.06rem solid rgba(0, 0, 0, 0.15);
@@ -72,7 +77,6 @@ nav {
     list-style: none;
     margin: 0;
     padding: var(--space-s) clamp(var(--space-m), 4vw, var(--space-l));
-
     display: grid;
     gap: clamp(0.5rem, 2vw, 1rem);
 
@@ -95,6 +99,7 @@ nav {
   }
 }
 
+/* main */
 main {
   padding: clamp(var(--space-s), 2vw, var(--space-l)) clamp(var(--space-m), 4vw, var(--space-l));
 
@@ -136,10 +141,17 @@ main {
       gap: 0.9rem;
       padding: var(--space-m);
 
+      & .poster-wrap {
+        width: 100%;
+        max-height: 30rem;
+        overflow: hidden;
+        border-radius: var(--radius-small);
+        background: #eee;
+      }
+
       & img {
         width: 100%;
-        aspect-ratio: 2 / 3;
-        object-fit: cover;
+        display: block;
         border-radius: var(--radius-small);
         background: #eee;
       }
@@ -148,9 +160,8 @@ main {
         margin: 0.25rem 0 0.5rem;
         color: var(--color-text);
 
-        display: -webkit-box;
-        -webkit-line-clamp: 9;
-        -webkit-box-orient: vertical;
+        line-height: 1.5rem;
+        max-height: 13.5rem;
         overflow: hidden;
       }
 
@@ -168,22 +179,19 @@ a:focus-visible {
   outline-offset: 0.12rem;
 }
 
-/* media queries */
+/* media queries (mobile-first) */
 @media (min-width: 48rem) {
-  /* 768px */
   nav #menu {
     grid-auto-flow: column;
     justify-content: start;
   }
-
   #movieList article .img_text {
+    /* poster left, text right */
     grid-template-columns: 13.75rem 1fr;
     align-items: start;
   }
 }
-
 @media (min-width: 64rem) {
-  /* 1024px */
   body {
     font-size: clamp(1.05rem, 1.6vw, 1.15rem);
   }

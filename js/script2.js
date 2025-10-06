@@ -1,3 +1,5 @@
+// here we can't select / use the categories .. but this was my first solution to the assignment
+
 async function moviesData() {
   const URL = "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1";
   const options = {
